@@ -1,0 +1,456 @@
+{
+    "conservativeRep": {
+        "": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 1,
+            "STAY": 1,
+            "probability": 0.5
+        },
+        "conservativeRep_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 2,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 2,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 1,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 1,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        }
+    },
+    "progressiveDem": {
+        "": {
+            "MOVE": 2,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep": {
+            "MOVE": 2,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep": {
+            "MOVE": 2,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_progressiveDem": {
+            "MOVE": 2,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep": {
+            "MOVE": 2,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem": {
+            "MOVE": 2,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep": {
+            "MOVE": 2,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep": {
+            "MOVE": 2,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem": {
+            "MOVE": 2,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 2,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem": {
+            "MOVE": 2,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem": {
+            "MOVE": 1,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep": {
+            "MOVE": 1,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem": {
+            "MOVE": 1,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 1,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem": {
+            "MOVE": 1,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem": {
+            "MOVE": 1,
+            "STAY": 0,
+            "probability": 1.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_progressiveDem_progressiveDem_progressiveDem_progressiveDem_progressiveDem": {
+            "MOVE": 0,
+            "STAY": 1,
+            "probability": 0.0
+        },
+        "conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep_conservativeRep": {
+            "MOVE": 1,
+            "STAY": 0,
+            "probability": 1.0
+        }
+    }
+}
