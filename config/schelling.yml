@@ -1,0 +1,80 @@
+
+dev: False #if in dev mode, do not save output, etc.
+debug: False
+
+
+##############
+# Experiment #
+##############pip 
+name_experiment: "test"
+max_steps: 2 #If null, run until stabilization
+save_every: 1 
+visualize_every: 1 
+grid_size: [50, 50]
+#confirm_for_openai: False #if True, will ask for confirmation before sending to OpenAI API
+max_initial_score: 0.60
+use_cached_probability: True
+cache_id: "base"
+num_runs: 1
+num_cores: 2 #Gideon cores /2 as 32
+
+##############
+# LLM
+##############
+llm: "gpt-4o-mini" #"ollama_llama2" #here shortcut name for model (cf dictionary below) ollama_llama2
+
+##############y
+# Model Param#
+##############
+name: "schelling"
+model_class: "SchellingLLMModel"
+variable_parameters: ["polarization"] #vacancy_percentage["polarization", "vacancy_percentage"] #then values of the parameters are specified by the list below
+variable_values: [[0.1, 0.8]] #[[0.02, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]] #[[5, 10, 20, 30, 40, 50, 60, 70]][[0.02, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8], [5, 10, 20, 30, 40, 50, 60, 70, 80]]
+generate_gif: False
+perception_with_reflection: False
+perception_with_orientation: False
+perception_with_position: False
+
+metrics: ["percolation_seggregation", "percolation_seggregation_renormalised", "mean_seggregation", "morans_I", "neighborhood_entropy", "gini_coefficient", "segregation_shift"] # "fractal_dimension"]
+parameters:
+  moving_mode: "optimal" #random (completely random) or biased (all position with weight values segg),  desired  (random within desired positions), optimal (weighted among desired positions)
+  perception_radius: 1 #int, how far the agent can perceive its neigbors
+  update_likelihood: 0.9 #float, probability of updating the agent's position at each iteration, between 0 and 1
+  early_stopping: True # if probability update, may not stop
+  early_stopping_step: 10 # stop after n steps without less than threshold update (what consider almost stable)
+  early_stopping_threshold: 0.5 # stop if the change is less than threshold (in %) (depend number agents)
+  early_stopping_min_step: 20 #100 # minimum number of steps before stopping
+  personas: ["conservativeRep", "progressiveDem"] #list persona types
+  polarization: 0.9 #NOTE: IGNORED if in variable param, between 0 and 1, degree of polarisation of the initial population
+  degrees: [1,2,3] #range of degrees of considered (mild, active, radical)
+  bias: 0.0 #float, between -1 and 1, degree of bias of the initial population then RATIO is diregarded #TODO: Remove ratio just empty slots
+  vacancy_percentage: 20 #NOTA BENE: if not None, ratio should be None and then the distribution is not biased #NOTE: IGNORED if in variable param,
+  ratio: null #[0.35, 0.35] # proportion of each persona types. #NOTE: it should not sum to 1 as there should have some empty cells on the grid
+  temperature: 0.1
+  noise: 0.00 #05 #Add noise to decision bias proba moving, since people move every X years
+  top_p: 0.99999
+  prompt: ""
+  recent_memory: False #if use recent memory
+  external_memory: False #if use external memory
+  inject_prompt_bias: [] #if provide extra instruction bias persona
+  
+
+##############
+# LLM PROMPTS #
+##############
+prompts:
+  bias: 
+    instruction: "Instructions: 1. Your decision to move or stay shall only be determined by your satisfaction, which depends exclusively on the relationship between your demographic group and the distribution of demographic groups among your neighbors in the surrounding habitable areas. 2. Your satisfaction is higher if many individuals of your same demographic group {persona} are nearby, and less of other demographic groups. 3. Your decision is based only on the current situation without concern for the uncertainty of finding a better location after moving."
+    env: "It is 2025. You live in US, during a time of increasing political and social polarization. Recent events, including policy shifts under the Trump administration and the rise of the MAGA movement, have intensified debates on immigration, racial identity, america-first politics, and economic inequality."
+  perception:
+    local: "Your neighborhood is composed of the following persons: "
+    local_empty: "You are currently living relatively isolated: no one is living close."
+  update: 'This year, you (as {name}) have the possibility to move to a new neighborhood. You can decide either to move to another neighborhood, or to stay in this current neighborhood. Please respond with "MOVE" if you wish to change your neighborhood, or "STAY" if you prefer to remain.'
+
+##############
+# LLM MODELS without of Ollama #TODO Remove
+############## 
+max_tokens:
+  llama-2-7b-chat.ggmlv3.q8_0: 4000
+  gpt-3.5-turbo: 4000
+  gpt-4: 8000

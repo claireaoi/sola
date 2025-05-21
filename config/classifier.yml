@@ -1,0 +1,88 @@
+
+dev: False
+debug: True
+
+##############
+# Experiment #
+##############
+name_experiment: "test" #nameXP_PossibleShapes(if not all)_actualShape_radius
+target_shape: 1
+shapes: [1,2,3,4] #[0,1,2,3,4,5,6,7,8,9] # Possible shapes (0 or 1) #TODO
+max_steps: 1
+save_every: 1
+visualize_every: null
+grid_size: [10,10] #[28, 28]  # Adjust based on digit size and thickness. For non interactive, may beed 28 as size
+num_runs: 1
+interactive: False
+perception_with_reflection: False
+perception_with_orientation: False
+perception_with_position: True
+
+##############
+# LLM Model #
+##############
+llm: "gpt-4.1" # ["o4-mini", "gpt-4.1", "claude-3-7-sonnet-20250219"] #-mini" #"o4-mini" #NOTE: May be list, then would randomly split different models
+
+##############
+# Model Params #
+##############
+name: "self_classifying"
+model_class: "SelfClassifyingModel"
+variable_parameters: null
+variable_values: null
+generate_gif: True
+
+metrics: ["agreement_score", "entropy"] #"convergence_steps", "robustness_to_noise"
+parameters:
+  initial_belief: "none" #or None or a specific belief
+  initial_confidence: 10 #or None or a specific confidence  
+  thin_shape: True
+  perception_radius: 2  # How far an agent perceives its neighbors
+  update_likelihood: 0.99  # Probability of updating belief per step
+  early_stopping: True
+  convergence_threshold: 50 # in terms of confidence level required, used for early stopping
+  convergence_ratio_agents: 0.99 # in terms of ratio of agents with belief above convergence_threshold
+  early_stopping_step: 2  # Stop if no updates for X steps
+  early_stopping_min_step: 3 # Minimum number of steps before early stopping
+  early_stopping_threshold: 0.5 # stop if the change is less than threshold (in %) (depend number agents)
+  temperature: 0.1  # LLM temperature for stochastic responses
+  noise: 0.1  # Noise level to inject into confidence estimation (into confidence) #TODO: HOW ADD NOISE HERE
+  noise_mode: "uniform30" # uniform30 (all hypotheses confidence to random between 0 to 30) or reset (all hypotheses to 20%) or shift, then +/-20% to all hypotheses
+  top_p: 0.99999
+  max_observations: 10
+  max_hypotheses: 5
+  confidence_threshold: 30 # Confidence threshold to consider main hypotheses is a belief 
+  update_final_prompt: True
+
+##############
+# LLM PROMPTS #
+##############
+#prompt_bias:  #NOTE TO ADD SOME BIAS
+
+prompts:
+  system_prompt: "You are an agent placed with other agents within a 2D grid, in a way you form together a digit shape. Your task is to collaboratively identify this digit by exchanging information with nearby agents.
+    You, as other agents, can only perceive your immediate surroundings, and the neighbor messages. You will need to propagate local observations until reaching a global understanding of the full shape.
+    In this experiment, the shape is a single digit among the following: #shapes. Only these digits are possible here. 
+    Instructions: 
+    - Take into account your own coordinates in the grid and each neighbor’s position (e.g., 'Down 1 Left 1' means the neighbor is one step down and one step left), as this spatial context provide key clues about the local structure and would help determine the global shape. Coordinates are given in a grid system (x, y), where the bottom left corner is (0,0) and the Top right corner is the max grid size #grid_size.
+    - Do not rush to conclusions, stay open to several hypotheses about possible shapes (#shapes) until you have enough information from more distant neighbors (or yourself). 
+    - Distinguish between actual observations of a feature and the absence of observation of that feature, as the latter may be overturned by future information arriving from elsewhere (e.g. big loops, or distant features).
+    - Clearly express uncertainty in your opinion. If an observation allows you to confidently discard certain hypotheses, assert that, alongside the justification so the others may trust you better. Otherwise, be cautious and humble about any assumptions. Wait enough steps to get information from all your distant neighbors, notably before validating or dismissing the presence of a loop or another feature.   
+    - Together with all the agents, you should form the complete shape, i.e. you should check every part of the shape should be present among you before being raising your confidence above 60% for an hypothesis. 
+    - Note the digit may have a certain thickness and digits are pixelated, so curves are never smooth and round but approximated by pixels. Stay open to different design of a digit as it can be stylised differently that what you expect."  
+  initialisation: "Reflect on your own position in the grid and where are (or are not) neighbors around you and from the local shape you observe (e.g. vertical line, soft curve-like angle, sharp angle, horizontal dead-end if nobody below, etc.). Given these observations and reflections, emit some hypotheses (max #max_hypotheses) as H = (digit, self-role, confidence, comment) on which shape you may be in and where in the shape you may be located, e.g. (0, 'top curve, right side', 15%) and (3, 'bottom or middle curve, right side', 15%) if observe sort of concave curve going down or if observe long vertical line, (1, 'main vertical edge of the 1', 20%). Be prudent in your confidence estimation as there may be different designs for each digit. Respond in a JSON format with keys: 'analysis' (a string describing your reasoning process), 'observation' (a string synthetising your local observations -this should be factual), 'hypotheses' (a list of core hypotheses, each composed of (digit, self-role, confidence (in %), comment to justify the hypothesis))."
+  perception:
+    local: "Here are your Neighbors Observations and Beliefs:"
+  update: "Reflect step-by-step on how each of your hypotheses is affected by what your neighbours shared: each hypothesis may stay identical, be reinforced or diminished (if new facts come into play), become more detailed (rel. self-role) or discarded (only from clear facts). Reason on your and their observations rather than trust their beliefs. Pay attention to the position of your neighbor relative to you, as their position in the shape should be consistent with yours (e.g. top neighbors should be occupying the part of the digit above your own identified role in the digit). \nAvoid conformism but consider the facts communicated by your neighbour (e.g. presence sharp angle towards left, soft angle at middle, dead end at middle, long vertical line, stem towards right etc.) which may diminish or reinforce hypotheses. \nStay open to new hypotheses and numbers fitting your and their observations. To form a digit, you must identify all the parts of the shape among your distant neighbors (the endings, spine, closed loops or open curves, etc.), ensuring they are positioned in a consistent and coherent arrangement. Only gain confidence in an hypothesis if it fits all observations accumulated. \nBe prudent and gradual in your confidence estimation, increase or decrease your confidence by less than 10% per step. Do not rush to conclusion, take your time, think step by step. \nAfter this analysis, save (if any) new observations (only facts here, specifying around where it comes from) and share your updated most likely hypotheses (maximum #max_hypotheses). Respond in a JSON format with the keys: 'analysis' (string),'observations' (as list of string),  'hypotheses' (containing core hypotheses, each composed of (digit, self-role, confidence (in %), comment to justify the hypothesis))."
+  update_final: "Try to converge towards a shared belief over the shape since the simulation approach to an end."
+  transmission: "Synthesize the key observations you or your neighbors have accumulated and hypotheses you've formed for your neighbours. Try to insist on facts more than beliefs. Communicate your doubts and uncertainty. If you have solid reasons to dismiss certain hypotheses, emphasize them; otherwise, communicate with caution. Keep your message as short and efficient as possible—every character counts."
+
+
+##############
+# LLM MODELS without of Ollama #
+##############
+
+max_tokens:
+  llama-2-7b-chat.ggmlv3.q8_0: 4000
+  gpt-3.5-turbo: 4000
+  gpt-4: 8000
