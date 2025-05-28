@@ -17,12 +17,21 @@ In SOLA, each LLM-based agent iteratively:
 The repository includes implementations of two key models:
 ### Schelling Segregation Model
 An implementation of a segregation model using LLM agents, leading to emergent segregation patterns.
-![Seggregation evolution under different polarization](data/schelling/schelling.gif)
+![Seggregation evolution under different polarization from SOLA model](data/schelling/schellingLLM.gif)
+This animation visualizes the evolution of SOLA's Schelling segregation model under two different polarisation level: 0.5 and 0.9. Each panel shows a grid where agents of two in-groups (red dots are democrats, and yellow dots are republican) occupy discrete positions. Agents are initially placed in a random configuration. As the simulation unfolds, SOLA agents assess their surroundings based on a natural language perception of their local neighborhood and decide whether to stay or relocate. Higher polarization, implemented through a more radical distribution of agent in-group commitment (specified in the respective LLM system prompts), leads to greater levels of final segregation, reflecting stronger homophilic tendencies in decision-making.
+
+![Seggregation evolution under different similarity threshold from the Original Schelling Model](data/schelling/schellingABM.gif)
+This animation visualizes the evolution of original Schelling’s segregation model under three different similarity thresholds: 70%, 50%, and 30%. As the simulation progresses, agents evaluate their local neighborhood; if the proportion of similar neighbors falls below their individual similarity threshold, they relocate to a new position.
+
+
 
 ### Self-Classifying MNIST Experiments
 Inspired by Randazzo et al., this experiment investigates collective intelligence capabilities of language-based agents in pattern recognition tasks.
-![Evolution of the Beliefs Distribution in the Classification Task of Digit 9](data/classifier/digit9.gif)
+![Evolution of the Beliefs Distribution in the Classification Task of Digit 9](data/classifier/communicate.gif)
 
+This animation visualizes the evolution of agent beliefs in a Self-Classifying task. Agents are initially uncertain, with diverse low-confidence hypotheses about which digit they collectively form. Each agent perceives only its local neighborhood and exchanges short messages with neighbors using natural language. Over several communication steps, agents revise their internal hypotheses through prompt-based reasoning and gradually converge on the correct global interpretation: digit 6. The color of each node encodes the agent's current top hypothesis, while the number indicates the digit believed with highest confidence. Gray nodes indicate agents with no active belief. The emergence of global consensus demonstrates how decentralized, language-based agents can achieve structured pattern recognition without centralized control.
+
+This run was done with 10% noise.
 
 ## Installation
 - Clone the Repository
